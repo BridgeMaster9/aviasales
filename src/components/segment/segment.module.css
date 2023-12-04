@@ -1,0 +1,28 @@
+.segment{
+    display: flex;
+    justify-content: space-between;
+    height: 39px;
+    font-weight: 600;
+}
+.segment:last-child{
+    margin-top: 10px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 141px;
+    height: 39px;
+
+}
+.info-header{
+    font-size: 12px;
+    line-height: 18px;
+    color:#A0B0B9;
+    Text-transform: Uppercase;
+}
+.info-body{
+    font-size: 14px;
+    line-height: 21px;
+    color: #4A4A4A;
+}

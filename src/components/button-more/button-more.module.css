@@ -1,0 +1,16 @@
+.inner{
+    margin-bottom: 50px;
+}
+.more{
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+    height: 50px;
+    width: 100%;
+    border: none;
+    color: #FFFFFF;
+    Text-transform: Uppercase;
+    background-color: #2196F3;
+    border-radius: 5px;
+    cursor: pointer;
+}

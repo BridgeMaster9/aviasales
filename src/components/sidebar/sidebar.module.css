@@ -1,0 +1,65 @@
+.sidebar{
+    height: 252px;
+    width: 232px;
+    padding: 20px 0px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 8px 0 #0000001A;
+}
+.header{
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+    color: #4A4A4A;
+    Text-transform: Uppercase;
+    margin-bottom: 10px;
+}
+.filters{
+    padding: 0;
+    text-align: start;
+}
+.filter{
+    height: 40px;
+    font-size: 13px;
+    padding: 10px 0px;
+    padding-left: 20px;
+}
+.filter:hover{
+    background-color: #F1FCFF;
+}
+.checkbox{
+    display: block;
+    cursor: pointer;
+}
+.checkbox input{
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.checkbox span{
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #9ABBCE;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+.checkbox span::before{
+    content: "";
+    display: inline-block;
+    height: 8px;
+    width: 12px;
+    background-image: url("Shape.svg");
+    background-size: contain;
+    margin-left: 3px;
+    transform: scale(0);
+}
+
+.checkbox input:checked + span::before{
+    transform: scale(1);
+}
+.checkbox input:checked+ span{
+    border-color: #2196F3;
+}
+

@@ -1,0 +1,18 @@
+.App {
+  width: 754px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: OpenSans, Arial, sans-serif;
+}
+
+.content{
+  display: flex;
+  flex-direction: row;
+}
+
+.main-content{
+  margin-left: 20px;
+}
+.ant-alert{
+  margin-top: 15px;
+}
