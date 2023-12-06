@@ -1,33 +1,37 @@
 import styles from './tabs.module.css'
-import * as actions from '../../Redux/actions'
-import { connect } from 'react-redux'
+import { setCheap, setFast, setOpt, sortCheapest, sortFastest } from '../../Redux/actions'
+import { useDispatch } from 'react-redux'
 
-const Tabs = function ({ tabs, setCheap, setFast, sortCheapest, sortFastest }) {
-  const classCheap = tabs === 'cheapest' ? styles['tab-checked'] : ''
-  const classFast = tabs === 'fastest' ? styles['tab-checked'] : ''
-
+const Tabs = function () {
+  const dispatch = useDispatch()
   function handleCheap() {
-    setCheap()
-    sortCheapest()
+    dispatch(setCheap())
+    dispatch(sortCheapest())
   }
   function handleFast() {
-    setFast()
-    sortFastest()
+    dispatch(setFast())
+    dispatch(sortFastest())
+  }
+  function handleOpt() {
+    dispatch(setOpt())
   }
 
   return (
     <div className={styles.tabs}>
-      <button className={`${styles.tab} ${classCheap}`} type="button" onClick={handleCheap}>
+      <input type="radio" name="tabs" id="cheapest" onClick={handleCheap} />
+      <label className={styles.tab} htmlFor="cheapest">
         самый дешевый
-      </button>
-      <button className={`${styles.tab} ${classFast}`} type="button" onClick={handleFast}>
+      </label>
+      <input type="radio" name="tabs" id="fastest" onClick={handleFast} />
+      <label className={styles.tab} htmlFor="fastest">
         самый быстрый
-      </button>
-      <button className={styles.tab} disabled type="button">
+      </label>
+      <input type="radio" name="tabs" id="optimal" onClick={handleOpt} />
+      <label className={styles.tab} htmlFor="optimal">
         оптимальный
-      </button>
+      </label>
     </div>
   )
 }
-const mapStateToProps = (state) => ({ tabs: state.tabs })
-export default connect(mapStateToProps, actions)(Tabs)
+
+export default Tabs

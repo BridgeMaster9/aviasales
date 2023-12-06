@@ -1,3 +1,4 @@
+import uniqid from 'uniqid'
 // actions tabs
 export const setCheap = () => ({ type: 'SET_CHEAPEST' })
 export const setFast = () => ({ type: 'SET_FASTEST' })
@@ -29,6 +30,9 @@ export const loadData = () => async (dispatch) => {
           return 'fail'
         }
         const ticketsData = await responseTickets.json()
+        ticketsData.tickets.forEach((elem) => {
+          elem.id = uniqid()
+        })
         dispatch({ type: 'TICKETS_LOAD', data: ticketsData.tickets })
         return ticketsData
       } catch (e) {

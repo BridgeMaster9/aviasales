@@ -1,7 +1,6 @@
 import styles from './tickets.module.css'
 import Ticket from '../ticket'
 import { useSelector } from 'react-redux'
-import uniqid from 'uniqid'
 
 const Tickets = function () {
   const ticketsData = useSelector((state) => state.ticketsData)
@@ -27,7 +26,7 @@ const Tickets = function () {
       if (count < numberOfTickets) {
         count++
         return (
-          <li key={uniqid()}>
+          <li key={item.id}>
             <Ticket data={item} />
           </li>
         )
